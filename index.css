@@ -1,0 +1,80 @@
+
+body{
+    padding: 0px;
+    margin: 0px;
+    color: white;
+    background-image: url('images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover ;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+#navbar{
+    /* background-color: antiquewhite;   */
+    display: flex;
+    justify-content: space-around;
+    height: 200px;
+}
+
+#navbar #logo img{
+    top: 0px;
+    margin: 5px;
+}
+
+.box{
+    font-weight: bold;
+    display: flex;
+    margin: 0px 25px;
+    padding: 5px;
+    align-self: center;
+    border-radius: 10px;
+    
+}
+
+
+a{
+    text-decoration: none;
+    color: rgb(243, 233, 243);
+    font-size: 1.3rem;
+  
+}
+
+.sign{
+    text-align: center;
+    background-color: black;
+    padding: 5px;
+    align-self: center;
+    height: 20px;
+    border-radius: 20px;
+    width: 90px;
+    border: 2px solid black;
+    
+}
+
+.sign:hover{
+    background-color: rgb(241, 71, 71);
+    color: white;
+}
+
+a:hover{
+    text-decoration-line: underline;
+}
+
+.body{
+    justify-content: center;
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 50px;
+    align-items: center;
+
+}
+
+#start{
+    padding: 5px;
+ 
+    border: 2px solid red;
+    border-radius: 15px;
+    background-color: red;
+}
