@@ -3,7 +3,7 @@ body{
     padding: 0px;
     margin: 0px;
     color: white;
-    background-image: url('background.jpg');
+    background-image: url('Images/background.jpg');
     background-repeat: no-repeat;
     background-size: cover ;
     height: 100vh;
