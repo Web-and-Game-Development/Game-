@@ -1,0 +1,116 @@
+
+.about-us{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.overview{
+    display: flex;
+    flex-direction: column;
+    color: hotpink;
+    font-size:xx-large;
+    height: 320px;
+    width: 200px;
+    margin-left: -40px;
+    margin-right: -120px;
+    border: rgb(247, 146, 163);
+    background:rgb(255, 232, 216);
+    box-shadow: -2rem 0 3rem -2rem;
+    border-radius: 10px;
+    perspective-origin: right;
+    perspective: 2100;
+    padding: 1.5rem;
+}
+
+.team{
+   color: black;
+}
+
+.team-mem{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    height: 320px;
+    width: 250px;
+    margin-right: -300px;
+    background: linear-gradient(85deg,rgb(247, 146, 163),#000000);
+    box-shadow: -2rem 0 3rem -2rem;
+    border-radius: 28px;
+    perspective-origin: right;
+    perspective: 2100;
+    padding: 1.5rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.team-mem:hover{
+    transform: rotate(3deg) translateX(-100px);
+}
+
+#box4{
+    margin-right: 0px;
+}
+
+.name{
+   color: white;
+   text-shadow: hotpink;
+   font-size: 30px;
+}
+
+.btnf a:link {
+  color: blue;
+  background-color: transparent;
+  text-decoration: none;
+  border: 2px solid blue;
+}
+
+.btnf a:visited {
+  color: blue;
+  background-color: transparent;
+  text-decoration: none;
+  border: 2px solid blue;
+}
+
+.btnf a:hover {
+  color: blue;
+  background-color: transparent;
+  text-decoration: underline;
+  border: 2px solid blue;
+}
+
+.btnf a:active {
+  color: blue;
+  background-color: transparent;
+  text-decoration: underline;
+  border: 2px solid blue;
+}
+
+.btnf-wrapperf p {
+  margin: 10px 0;
+}
+
+.fa-linkedin {
+  background: #3b5998;
+  color: white;
+  margin-right: 10px;
+}
+
+.btnf {
+  margin-top: 10px;
+  margin-right: 20px;
+  padding: 12px 24px;
+  color: white;
+  width: 150px;
+  display: inline-block;
+  opacity: 0.95;
+  border-radius: 4px;
+  background: #3b5998;
+}
+
+.btnf:hover {
+  opacity: 1;
+}
+
+.fa {
+  margin-right: 5px;
+}
