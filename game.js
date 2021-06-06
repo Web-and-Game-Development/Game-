@@ -4,6 +4,7 @@ var interval;
 var both = 0;
 var counter = 0;
 var currentBlocks = [];
+let score = 0;
 
 function moveLeft(){
     var left = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
@@ -21,10 +22,10 @@ document.addEventListener("keydown", event => {
     if(both==0){
         both++;
         if(event.key==="ArrowLeft"){
-            interval = setInterval(moveLeft, 1);
+            interval = setInterval(moveLeft, 0.1);
         }
         if(event.key==="ArrowRight"){
-            interval = setInterval(moveRight, 1);
+            interval = setInterval(moveRight, 0.1);
         }
     }
 });
@@ -82,11 +83,16 @@ var blocks = setInterval(function(){
             drop++;
             if(iholeLeft<=characterLeft && iholeLeft+20>=characterLeft){
                 drop = 0;
+                score++;
+                // score /= 8;
+                let s = document.getElementById("score");
+                // if(Math.ceil(score/8) % 20 == 0) score--;
+                s.innerHTML = "Score  : " + Math.ceil(score/3.3);
             }
         }
     }
     if(drop==0){
-        if(characterTop < 480){
+        if(characterTop < 490){
             character.style.top = characterTop + 5 + "px";
         }
     }else{
