@@ -5,6 +5,9 @@ var both = 0;
 var counter = 0;
 var currentBlocks = [];
 let score=0;
+const gameOverSound = new Audio('music/gameover.mp3');
+const musicSound = new Audio('music/music.mp3');
+
 function moveLeft(){
     var left = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
     if(left>0){
@@ -33,6 +36,7 @@ document.addEventListener("keyup", event => {
     both=0;
 });
 
+musicSound.play();
 var blocks = setInterval(function(){
     var blockLast = document.getElementById("block"+(counter-1));
     var holeLast = document.getElementById("hole"+(counter-1));
@@ -61,9 +65,11 @@ var blocks = setInterval(function(){
     var drop = 0;
     if(characterTop <= 0){
        // document.getElementById("ch").innerHTML="GAME OVER SCORE : "+(counter-9);
-       alert("GAME OVER SCORE : "+(counter-9));
+       musicSound.pause();
+       gameOverSound.play();
+       alert("GAME OVER SCORE : "+(Math.ceil(score/13)));
         clearInterval(blocks);
-        location.reload();
+        history.back();
     }
         for(var i = 0; i < currentBlocks.length;i++){
         let current = currentBlocks[i];
@@ -73,22 +79,23 @@ var blocks = setInterval(function(){
         let iholeLeft = parseFloat(window.getComputedStyle(ihole).getPropertyValue("left"));
         iblock.style.top = iblockTop - 0.5 + "px";
         ihole.style.top = iblockTop - 0.5 + "px";
-        if(iblockTop < -20){
+        if(iblockTop < 0){   
             currentBlocks.shift();
             iblock.remove();
             ihole.remove();
-            document.getElementById("score").innerHTML=" SCORE : "+(counter-9);
-
+            
         }
         if(iblockTop-20<characterTop && iblockTop>characterTop){
             drop++;
             if(iholeLeft<=characterLeft && iholeLeft+20>=characterLeft){
                 drop = 0;
+                score++;
+                document.getElementById("score").innerHTML="Score : "+(Math.ceil(score/13));
             }
         }
     }
     if(drop==0){
-        if(characterTop < 480){
+        if(characterTop < 490){
             character.style.top = characterTop + 1 + "px";
         }
     }else{
