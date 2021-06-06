@@ -6,22 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="game.css">
     <title> MY GAME </title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+
+        }
+        h1{
+            font-size: large;
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+            color: blue;
+        }
+        p a{
+            text-decoration: none;
+            color: black;
+            width: 200px;
+            height: 100px;
+            border: 2px solid purple;
+            padding: 10px;
+            font-weight: bold;
+            border-radius: 5px;
+            font-size: 30px;
+        }
+
+        a:hover{
+            background-color: red;
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <div id="header">
-        <pre style="border: 3px; font-size: larger; color: crimson; text-align: center;">
+        <pre>
            <h1>CHOOSE THE LEVEL OF GAME </h1> 
         </pre> 
         <p style="text-align: center;">
-            <a href="game.html"><button style=" font-size: large; text-align: center; align-content: center;">EASY</button></a><br>
+            <a href="game.html">EASY</a><br>
             <br>
             <br>
-
-            <a href="game_medium.html"><button style=" font-size: large; text-align: center;">MEDIUM</button></a><br>      
+            <br>
+            <a href="game_medium.html">MEDIUM</a><br>      
             <br>
             <br>
-
-            <a href="game_hard.html"><button style=" font-size: large; text-align: center;">HARD</button></a>      
+            <br>
+            <a href="game_hard.html">Hard</a>      
             <br>
             <br>
         </p>
