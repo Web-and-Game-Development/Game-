@@ -9,6 +9,7 @@ const gameOverSound = new Audio('music/gameover.mp3');
 const musicSound = new Audio('music/music.mp3');
 
 function moveLeft(){
+    musicSound.play();
     var left = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
     if(left>0){
         character.style.left = left - 1 + "px";
