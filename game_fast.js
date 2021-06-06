@@ -4,27 +4,27 @@ var interval;
 var both = 0;
 var counter = 0;
 var currentBlocks = [];
-let score = 0;
+
 function moveLeft(){
     var left = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
     if(left>0){
-        character.style.left = left - 1.5 + "px";
+        character.style.left = left - 2.5 + "px";
     }
 }
 function moveRight(){
     var left = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
     if(left<380){
-        character.style.left = left + 1.5 + "px";
+        character.style.left = left + 3.5 + "px";
     }
 }
 document.addEventListener("keydown", event => {
     if(both==0){
         both++;
         if(event.key==="ArrowLeft"){
-            interval = setInterval(moveLeft, 0.1);
+            interval = setInterval(moveLeft, 1);
         }
         if(event.key==="ArrowRight"){
-            interval = setInterval(moveRight, 0.1);
+            interval = setInterval(moveRight, 2);
         }
     }
 });
@@ -71,8 +71,8 @@ var blocks = setInterval(function(){
         let ihole = document.getElementById("hole"+current);
         let iblockTop = parseFloat(window.getComputedStyle(iblock).getPropertyValue("top"));
         let iholeLeft = parseFloat(window.getComputedStyle(ihole).getPropertyValue("left"));
-        iblock.style.top = iblockTop - 1.5 + "px";
-        ihole.style.top = iblockTop - 1.5 + "px";
+        iblock.style.top = iblockTop - 1.0 + "px";
+        ihole.style.top = iblockTop - 1.0 + "px";
         if(iblockTop < -20){
             currentBlocks.shift();
             iblock.remove();
@@ -82,19 +82,14 @@ var blocks = setInterval(function(){
             drop++;
             if(iholeLeft<=characterLeft && iholeLeft+20>=characterLeft){
                 drop = 0;
-                score++;
-                // score /= 8;
-                let s = document.getElementById("score");
-                // if(Math.ceil(score/8) % 20 == 0) score--;
-                s.innerHTML = "Score  : " + Math.ceil(score/3.01);
             }
         }
     }
     if(drop==0){
-        if(characterTop < 490){
-            character.style.top = characterTop + 5 + "px";
+        if(characterTop < 480){
+            character.style.top = characterTop + 2.5 + "px";
         }
     }else{
-        character.style.top = characterTop - 4 + "px";
+        character.style.top = characterTop - 1 + "px";
     }
 },1);

@@ -4,35 +4,31 @@ var interval;
 var both = 0;
 var counter = 0;
 var currentBlocks = [];
-let score = 0;
-
-
+let score=0;
 function moveLeft(){
     var left = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
     if(left>0){
-        character.style.left = left - 1.5 + "px";
+        character.style.left = left - 1 + "px";
     }
 }
 function moveRight(){
     var left = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
     if(left<380){
-        character.style.left = left + 1.5 + "px";
+        character.style.left = left + 1 + "px";
     }
 }
 document.addEventListener("keydown", event => {
     if(both==0){
         both++;
-       
         if(event.key==="ArrowLeft"){
-            interval = setInterval(moveLeft, 0.5);
+            interval = setInterval(moveLeft, 1);
         }
         if(event.key==="ArrowRight"){
-            interval = setInterval(moveRight, 0.5);
+            interval = setInterval(moveRight, 4);
         }
     }
 });
 document.addEventListener("keyup", event => {
-   
     clearInterval(interval);
     both=0;
 });
@@ -60,7 +56,6 @@ var blocks = setInterval(function(){
         currentBlocks.push(counter);
         counter++;
     }
-    
     var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     var characterLeft = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
     var drop = 0;
@@ -70,7 +65,7 @@ var blocks = setInterval(function(){
         clearInterval(blocks);
         location.reload();
     }
-    for(var i = 0; i < currentBlocks.length;i++){
+        for(var i = 0; i < currentBlocks.length;i++){
         let current = currentBlocks[i];
         let iblock = document.getElementById("block"+current);
         let ihole = document.getElementById("hole"+current);
@@ -78,33 +73,25 @@ var blocks = setInterval(function(){
         let iholeLeft = parseFloat(window.getComputedStyle(ihole).getPropertyValue("left"));
         iblock.style.top = iblockTop - 0.5 + "px";
         ihole.style.top = iblockTop - 0.5 + "px";
-        if(iblockTop < 0){
+        if(iblockTop < -20){
             currentBlocks.shift();
             iblock.remove();
             ihole.remove();
+            document.getElementById("score").innerHTML=" SCORE : "+(counter-9);
+
         }
-        
         if(iblockTop-20<characterTop && iblockTop>characterTop){
             drop++;
-            
             if(iholeLeft<=characterLeft && iholeLeft+20>=characterLeft){
                 drop = 0;
-                score++;
-                // score /= 8;
-                let s = document.getElementById("score");
-                // if(Math.ceil(score/8) % 20 == 0) score--;
-                s.innerHTML = "Score  : " + Math.ceil(score/8.01);
             }
         }
     }
     if(drop==0){
-        if(characterTop < 490){
-            character.style.top = characterTop + 2.5 + "px";
-           
+        if(characterTop < 480){
+            character.style.top = characterTop + 1 + "px";
         }
-    }
-    else{
-        character.style.top = characterTop -0.001 + "px";
-        
+    }else{
+        character.style.top = characterTop - 1 + "px";
     }
 },1);
