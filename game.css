@@ -1,13 +1,15 @@
 *{
     padding: 0;
     margin : 0;
-
+    
 }
 #game{
     width: 400px;
-    height: 500px;
+    height: 510px;
     border: 2px solid red;
-    margin: auto;
+    display: inline-block;
+    margin-top: 60px;
+    margin-left: 400px;
 }
 #header{
     width: 600px;
@@ -41,4 +43,13 @@
     position: relative;
     top: 100px;
     margin-top: -20px;
+}
+
+#score{
+    display: inline-block;
+    color: blue;
+    margin-left: 60px;
+    font-size: 30px;
+    font-weight: bold;
+    padding-top: 100px;
 }
