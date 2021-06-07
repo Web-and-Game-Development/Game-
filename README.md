@@ -1,10 +1,13 @@
-# Game- Development
+A different game from others :- _**BUBBLE BALL**_
 
-There are four members in this team of making a game
+**Game-Devs** presents you the newest game in the series 
+_**BUBBLE BALL**_ lets you play the game of your life which you will remember for whole of your life.
+The game has three levels: **Easy, Medium and Hard** which are the same thing as their name suggests. 
 
-1. Mohit Pati 12012003
-2. Rahul Shrimali 12012008
-3. Harsh Malik 12012014
-4. Ritesh Gupta 12012083
+The **Game-Devs** team hopes that you enjoy our little creation and review the game to help us make it better. 
 
-The main file is index.html i.e. the whole game will start with this page just open it.
+People are part of this amazing **Game-Devs** team are: 
+1. Mohit Pati 
+2. Rahul Shrimali
+3. Harsh Malik
+4. Ritesh Gupta 
